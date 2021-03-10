@@ -1,0 +1,736 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Yellowtail', cursive;
+}
+body{
+    background-color: rgb(211, 211, 211);
+}
+nav{
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+    position: fixed;
+    transition: 0.5s ease-in-out;
+    z-index: 5;
+}
+.navscroll{
+    background-color: rgb(20, 20, 20);
+    height: 8vh;
+    box-shadow: 1px 2px 5px rgb(240, 240, 240);
+}
+.logo{
+    font-size: 2.5em;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+  
+    z-index: 30;
+    transition: 0.3s ease;
+}
+.logo a{
+    color: rgb(240, 240, 240);
+    text-decoration: none;
+}
+.logo a:hover{
+    text-shadow: 1px 2px 5px rgb(240, 240, 240);
+    cursor: pointer;
+}
+.nav-links{
+    width: 40%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.nav-links li{
+    list-style: none;
+    font-size: 1.3em;
+    transition: 0.3s ease;
+    margin-top: 9px;
+    color: rgb(240, 240, 240);
+}
+.nav-links li:hover{
+    text-shadow: 2px 1px 5px rgb(240, 240, 240);
+    color: rgb(240, 240, 240);
+}
+.nav-links a{
+    text-decoration: none;
+    color: rgb(240, 240, 240);
+    letter-spacing: 2px;
+}
+.burger{
+    display: none;
+}
+@media screen and (max-width:1000px){
+     .burger{
+         display: block;
+         cursor: pointer;
+         z-index: 30;
+     }
+     .burger div{
+         width: 30px;
+         height: 3px;
+         margin: 5px;
+         background-color: rgb(240, 240, 240);
+         transition: all 0.5s ease;
+     }
+     .nav-links{
+         width: 100%;
+         height: 100vh;
+         left: 0;
+         top: 0;
+         position: absolute;
+         background-color: rgb(20, 20, 20);
+         flex-direction: column;
+         z-index: 20;
+         padding-top: 10vh;
+         clip-path: circle(100px at 95% -20%);
+         -webkit-clip-path:circle(100px at 95% -20%);
+         transition: 1s ease;
+     }
+     .nav-links li{
+         opacity: 0;
+         transition: all 0.5s ease;
+     }
+}
+.open{
+    clip-path: circle(2000px at 95% -20%);
+    -webkit-clip-path:circle(2000px at 95% -20%);
+}
+.toggle .line1{
+    transform: rotate(45deg) translate(5px,6px);
+}
+.toggle .line2{
+    opacity: 0;
+}
+.toggle .line3{
+    transform: rotate(-45deg) translate(5px,-6px);
+}
+@keyframes navlinkfade{
+    from{
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+
+.hero{
+    width: 100%;
+    height: 100vh;
+    background: url(images/pic3.jpg);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    padding-left: 10%;
+}
+.hero h1{
+    font-size: 6.5em;
+    color: rgb(240, 240, 240);
+    font-weight: 300;
+    letter-spacing: 3px;
+}
+.hero p{
+    color: rgb(240, 240, 240);
+    font-size: 17px;
+    font-weight: lighter;
+    letter-spacing: 2px;
+    font-family: 'Montserrat', sans-serif;
+}
+.hero button{
+    width: 150px;
+    height: 30px;
+    background: transparent;
+    border: solid 2px rgb(240, 240, 240);
+    margin-top: 5vh;
+    border-radius: 5px;
+    transition: 0.3s ease;
+    color:rgb(240, 240, 240) ;
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+.hero button a{
+    color: rgb(240, 240, 240);
+    text-decoration: none;
+ 
+ 
+}
+.hero button:hover{
+    box-shadow: -1px 2px 10px rgb(240, 240, 240);
+    text-shadow: 1px 2px 10px rgb(240, 240, 240);
+    cursor: pointer;
+}
+@media screen and (max-width:1000px){
+    .hero h1{
+        font-size: 4em;
+    }
+    .hero p{
+        font-size: 15px;
+    }
+    .hero button{
+        width: 120px;
+        height: 25px;
+        font-size: 15px;
+    }
+    
+}
+@media screen and (max-width:768px){
+    .hero h1{
+        font-size: 3.5em;
+    }
+    .hero p{
+        font-size: 12px;
+        width: 60%;
+    }
+    .logo{
+        font-size: 1.7em;
+    }
+  
+}
+@media screen and (max-width:500px){
+    .hero p{
+        width: 80%;
+    }
+}
+
+.story{
+    width: 100%;
+    height: 120vh;
+    position: relative;
+    overflow: hidden;
+}
+.story img{
+    position: absolute;
+    width: 450px;
+    height: 600px;
+    z-index: 0;
+    right: 15%;
+    top: 15%;
+    box-shadow: 2px 3px 15px rgb(20, 20, 20);
+}
+@media screen and (max-width:1024px){
+    .story{
+        height: 90vh;
+        margin-top: 5vh;
+    }
+    .story img{
+        width: 100%;
+        height: 100%;
+        right: 0;
+        top: 0;
+    }
+}
+.story .storyTextbox{
+    width: 500px;
+    height: 400px;
+    position: absolute;
+    left: 16%;
+    top: 27%;
+    background-color: rgb(240, 240, 240);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    padding-left: 30px;
+    padding-bottom: 50px;
+    box-shadow: 2px 3px 15px rgb(20, 20, 20);
+}
+@media screen and (max-width:1024px){
+    .story .storyTextbox{
+        width: 85%;
+        min-height: 400px;
+        left: 5%;
+    }
+}
+.story .storyTextbox h2{
+    font-size: 3em;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+.story .storyTextbox p{
+    width: 90%;
+    font-size: 17px;
+    text-align: justify;
+    font-family: 'Montserrat', sans-serif;
+}
+@media screen and (max-width:400px){
+    .story .storyTextbox h2{
+        font-size: 1.5em;
+    }
+    .story .storyTextbox p{
+        font-size: 14px;
+    }
+}
+.story .storyTextbox button{
+    position: absolute;
+    right: 0%;
+    bottom: 0%;
+    width: 170px;
+    height: 60px;
+    background-color: rgb(20, 20, 20);
+    color: rgb(240, 240, 240);
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: none;
+}
+.story .storyTextbox button:hover{
+    text-shadow: 1px 2px 5px rgb(240, 240, 240);
+    cursor: pointer;
+}
+
+
+.mission{
+    width: 100%;
+    height: 120vh;
+    position: relative;
+    overflow: hidden;
+}
+.mission img{
+    position: absolute;
+    width: 450px;
+    height: 600px;
+    z-index: 0;
+    left: 15%;
+    top: 15%;
+    box-shadow: -4px 3px 15px rgb(20, 20, 20);
+}
+@media screen and (max-width:1024px){
+    .mission{
+        height: 90vh;
+        margin-top: 5vh;
+    }
+    .mission img{
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+    }
+}
+.mission .missionTextbox{
+    width: 500px;
+    height: 400px;
+    position: absolute;
+    right: 16%;
+    top: 27%;
+    background-color: rgb(240, 240, 240);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    padding-left: 30px;
+    padding-bottom: 50px;
+    box-shadow: 2px 3px 15px rgb(20, 20, 20);
+}
+@media screen and (max-width:1024px){
+    .mission .missionTextbox{
+        width: 85%;
+        min-height: 400px;
+        left: 5%;
+        bottom: 5%;
+    }
+}
+.mission .missionTextbox h2{
+    font-size: 3em;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+.mission .missionTextbox p{
+    width: 90%;
+    font-size: 17px;
+    text-align: justify;
+    font-family: 'Montserrat', sans-serif;
+}
+@media screen and (max-width:400px){
+    .mission .missionTextbox h2{
+        font-size: 1.5em;
+    }
+    .mission .missionTextbox p{
+        font-size: 14px;
+    }
+}
+.mission .missionTextbox button{
+    position: absolute;
+    right: 0%;
+    bottom: 0%;
+    width: 170px;
+    height: 60px;
+    background-color: rgb(20, 20, 20);
+    color: rgb(240, 240, 240);
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: none;
+}
+.mission .missionTextbox button:hover{
+    text-shadow: 1px 2px 5px rgb(240, 240, 240);
+    cursor: pointer;
+}
+
+
+.cont{
+    width: 100%;
+    min-height: 60vh;
+    padding: 0 3%;
+    margin-top: 10vh;
+    display: flex;
+    margin-bottom: 10vh;
+}
+.cont1{
+    width: 33.3%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.cont2{
+    width: 33.3%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.cont3{
+    width: 33.3%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.cont1 img{
+      width: 70%;
+      height: 50%;
+}
+.cont1textbox{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 5vh;
+}
+.cont1textbox h2{
+     font-size: 3em;
+}
+.cont1textbox p{
+    font-size: 1em;
+    letter-spacing: 2px;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    line-height: 2em;
+}
+.cont2 img{
+    width: 70%;
+    height: 50%;
+}
+.cont2textbox{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 5vh;
+}
+.cont2textbox h2{
+     font-size: 3em;
+}
+.cont2textbox p{
+    font-size: 1em;
+    letter-spacing: 2px;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    line-height: 2em;
+}
+.cont3 img{
+    width: 70%;
+    height: 50%;
+}
+.cont3textbox{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 5vh;
+}
+.cont3textbox h2{
+     font-size: 3em;
+}
+.cont3textbox p{
+    font-size: 1em;
+    letter-spacing: 2px;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    line-height: 2em;
+}
+@media screen and (max-width:1025px){
+    .cont{
+        flex-direction: column;
+    }
+    .cont1{
+        width: 100%;
+    }
+    .cont1textbox p{
+        font-size: 1.6em;
+    }
+    .cont2textbox p{
+        font-size: 1.6em;
+    }
+    .cont3textbox p{
+        font-size: 1.6em;
+    }
+    .cont2{
+        width: 100%;
+    }
+    .cont3{
+        width: 100%;
+    }
+}
+@media screen and (max-width:800px){
+    .cont1textbox p{
+        font-size: 1em;
+    } .cont2textbox p{
+        font-size: 1em;
+    } .cont3textbox p{
+        font-size: 1em;
+    }
+}
+
+
+.carousel-item{
+    width: 100%;
+   height: 80vh;
+}
+.slide1{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    padding-left: 12%;
+    background-color: rgb(20, 20, 20);
+    color: rgb(240, 240, 240);
+    position: relative;
+}
+.slide .heading{
+    position: absolute;
+    left: 50%;
+    top: 5%;
+    transform: translateX(-50%);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+.slide1 img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.slide span{
+    font-size: 7em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-bottom: -5vh;
+}
+.slide1 p{
+    font-size: 1.5em;
+    width: 90%;
+    font-family: 'Montserrat';
+}
+
+
+.follow{
+    width: 100%;
+    min-height: 90vh;
+    background:url(images/pic14.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+.followcont{
+    width: 40%;
+    height: 100%;
+    position: absolute;
+    left: 10%;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.followcont h1{
+    font-size: 4em;
+    color:rgb(20, 20, 20);
+    letter-spacing: 3px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.followcont p{
+    color:rgb(20, 20, 20);
+    font-size: 20px;
+    font-family: 'Montserrat';
+    text-align: center;
+}
+.followcont .social{
+    width: 40%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 5vh;
+}
+.followcont .social a{
+ color: rgb(20, 20, 20);
+}
+@media screen and (max-width:800px){
+    .followcont h1{
+        font-size: 2em;
+    }
+    .followcont{
+        width: 50%;
+    }
+    .followcont p{
+        font-size: 13px;
+    }
+    .followcont .social{
+        margin-top: 2vh;
+    }
+}
+
+footer{
+    width: 100%;
+    min-height: 45vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5vh;
+    background-color: rgb(20, 20, 20);
+    color: rgb(240, 240, 240);
+}
+footer h1{
+    font-size: 4em;
+    letter-spacing: 15px;
+    text-transform: uppercase;
+}
+footer p{
+    font-family: 'Montserrat';
+    font-size: 15px;
+    text-align: center;
+}
+footer span{
+    color: rgb(153, 153, 153);
+    font-family: 'montserrat';
+}
+
+
+
+
+
+.contacthero{
+    width: 100%;
+    height: 100vh;
+    background: url(images/pic15.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+.contacthero .fas{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 20px;
+}
+.contacthero a{
+    color: rgb(240, 240, 240);
+    transition: 0.5s ease-in;
+}
+
+.contactcont{
+    width: 100%;
+    min-height: 60vh;
+    padding: 5vh 5%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.contbox{
+    width: 50%;
+    min-height: 50vh;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    box-shadow: 1px 1px 10px rgb(20, 20, 20);
+    padding-top: 10px;
+    padding-bottom: 75px;
+    position: relative;
+}
+.contactform{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.contactform h1{
+    font-size: 3em;
+    letter-spacing: 4px;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+.contactform label{
+    font-size: 1.3em;
+    margin-top: 10px;
+}
+.contactform input{
+    width: 80%;
+    text-align: center;
+    font-family: 'montserrat';
+}
+.contactform textarea{
+    width: 80%;
+    text-align: center;
+    font-size: 1.3em;
+    font-family: 'montserrat';
+}
+.contactform button{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 35%;
+    height: 10%;
+    border: none;
+    background-color: rgb(20, 20, 20);
+    color: rgb(240, 240, 240);
+    letter-spacing: 3px;
+    font-size: 1.5em;
+    transition: 0.3s;
+}
+.contactform button:hover{
+    text-shadow: 1px 2px 5px rgb(240, 240, 240);
+}
+
+.contactcont img{
+    width: 40%;
+    height: 100vh;
+}
+@media screen and (max-width:1024px){
+    .contactcont img{
+        display: none;
+    }
+    .contbox{
+        width: 100%;
+    }
+}
